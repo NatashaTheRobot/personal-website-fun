@@ -229,112 +229,59 @@
 	  sys.parameters({gravity:true});
 	  sys.renderer = Renderer("#viewport") ;
 		
-		//nodes 
-	  var blog = sys.addNode('Blog',{  color:'red',
-																		 shape:'dot',
-																		 label:'blog', 
-																		 link : 'http://natashatherobot.com/'
-																	 });
-	  var projects = sys.addNode('Projects',{  color:'blue',
-																						 shape:'dot',
-																						 label:'projects', 
-																						 link : 'https://github.com/natashatherobot'
-																					 });
-	  var contact = sys.addNode('Contact',{  color:'orange',
-																						 shape:'dot',
-																						 label:'contact', 
-																						 link : 'mailto:nmurashev@gmail.com'
-																					 });
-	  var connect = sys.addNode('Connect',{  color:'green',
-																						 shape:'dot',
-																						 label:'follow me', 
-																					 });
-	  var facebook = sys.addNode('F',{  color:'blue',
-																						 shape:'dot',
-																						 label:'facebook', 
-																						 link : 'http://www.facebook.com/natasha.murashev'
-																					 });
-	  var twitter = sys.addNode('t',{  color:'blue',
-																		 shape:'dot',
-																		 label:'twitter', 
-																		 link : 'https://twitter.com/natashatherobot'
-																	 });
-	  var linkedin = sys.addNode('in',{  color:'blue',
-																		 shape:'dot',
-																		 label:'linkedin', 
-																		 link : 'http://www.linkedin.com/in/natashamurashev'
-																	 });
-	  var github = sys.addNode('in',{  color:'blue',
-																		 shape:'dot',
-																		 label:'github', 
-																		 link : 'https://github.com/natashatherobot'
-																	 });
-	  var me = sys.addNode('me',{  color:'pink',
-																 shape:'dot',
-																 label:'me', 
-															 });
-
-		//connecting the nodes
-		sys.addEdge(me, blog);
-		sys.addEdge(me, connect);
-		sys.addEdge(me, projects);
-		sys.addEdge(me, contact);
-		sys.addEdge(connect, facebook);
-		sys.addEdge(connect, twitter);
-		sys.addEdge(connect, linkedin);
-		sys.addEdge(connect, github)														
-		
-																					
-																					
-    // var CLR = {
-    //   branch:"#b2b19d",
-    //   code:"orange",
-    //   doc:"#922E00",
-    //   demo:"#a7af00"
-    // }
-    // 
-    // var theUI = {
-    //   nodes:{"arbor.js":{color:"red", shape:"dot", alpha:1}, 
-    //   
-    //          demos:{color:CLR.branch, shape:"dot", alpha:1}, 
-    //          halfviz:{color:CLR.demo, alpha:0, link:'/halfviz'},
-    //          atlas:{color:CLR.demo, alpha:0, link:'/atlas'},
-    //          echolalia:{color:CLR.demo, alpha:0, link:'/echolalia'},
-    // 
-    //          docs:{color:CLR.branch, shape:"dot", alpha:1}, 
-    //          reference:{color:CLR.doc, alpha:0, link:'#reference'},
-    //          introduction:{color:CLR.doc, alpha:0, link:'#introduction'},
-    // 
-    //          code:{color:CLR.branch, shape:"dot", alpha:1},
-    //          github:{color:CLR.code, alpha:0, link:'https://github.com/samizdatco/arbor'},
-    //          ".zip":{color:CLR.code, alpha:0, link:'/js/dist/arbor-v0.92.zip'},
-    //          ".tar.gz":{color:CLR.code, alpha:0, link:'/js/dist/arbor-v0.92.tar.gz'}
-    //         },
-    //   edges:{
-    //     "arbor.js":{
-    //       demos:{length:.8},
-    //       docs:{length:.8},
-    //       code:{length:.8}
-    //     },
-    //     demos:{halfviz:{},
-    //            atlas:{},
-    //            echolalia:{}
-    //     },
-    //     docs:{reference:{},
-    //           introduction:{}
-    //     },
-    //     code:{".zip":{},
-    //           ".tar.gz":{},
-    //           "github":{}
-    //     }
-    //   }
-    // }
-    // 
-    // 
-    // var sys = arbor.ParticleSystem()
-    // sys.parameters({stiffness:900, repulsion:2000, gravity:true, dt:0.015})
-    // sys.renderer = Renderer("#sitemap")
-    // sys.graft(theUI)
+		var data = {
+			nodes: {
+				me:  {       color:'pink',
+										 shape:'dot',
+										 label:'me'},
+				blog: {  		 color:'red',
+										 shape:'dot',
+										 label:'blog', 
+										 link : 'http://natashatherobot.com/'},
+				projects: {	 color:'blue',
+										 shape:'dot',
+										 label:'projects', 
+										 link : 'https://github.com/natashatherobot'},
+				contact: { 	 color:'orange',
+										 shape:'dot',
+										 label:'contact', 
+										 link : 'mailto:nmurashev@gmail.com'},
+				connect: {	 color:'green',
+										 shape:'dot',
+										 label:'follow me'},
+				facebook: {  color:'blue',
+										 shape:'dot',
+										 label:'facebook', 
+										 link : 'http://www.facebook.com/natasha.murashev'},
+				twitter: { 	 color:'blue',
+										 shape:'dot',
+										 label:'twitter', 
+										 link : 'https://twitter.com/natashatherobot'},
+				linkedin: {	 color:'blue',
+										 shape:'dot',
+										 label:'linkedin', 
+										 link : 'http://www.linkedin.com/in/natashamurashev'},
+				github: {		 color:'blue',
+										 shape:'dot',
+										 label:'github', 
+										 link : 'https://github.com/natashatherobot'},						
+																																
+									 										
+			},
+			edges: {
+				me: 			{ blog: {}, 
+										connect: {},
+										projects: {},
+										contact: {} 
+				},
+				connect: 	{ facebook: {},
+										twitter: {},
+										github: {},
+										linkedin: {}
+				}	
+			}
+		};
+		sys.graft(data);
   })
 })(this.jQuery)
 
