@@ -4,3 +4,12 @@ body{
   font:12px/17px Arial, sans-serif;
   background:#f9f9f9;
 }
+
+h1 {
+	text-align: center;
+}
+/*#funstuff {
+  width: 800px;
+  height:600px;
+  margin: 0px auto;
+}*/
