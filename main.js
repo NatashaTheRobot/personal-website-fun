@@ -143,7 +143,7 @@
               selected = (nearest.distance < 50) ? nearest : null;
               if (selected){
                  dom.addClass('linkable');
-                 //window.status = selected.node.data.link.replace(/^\//,"http://"+window.location.host+"/").replace(/^#/,'')
+                 window.status = selected.node.data.link.replace(/^\//,"http://"+window.location.host+"/").replace(/^#/,'');
               }
               else{
                  dom.removeClass('linkable');
@@ -234,7 +234,7 @@
                       shape:'dot',
                       label:'blog',
                       link : 'http://natashatherobot.com/'},
-				projects: {   color:'red',
+				projects: {   color:'purple',
                       shape:'dot',
                       label:'projects',
                       link : 'https://github.com/natashatherobot'},
